@@ -1,0 +1,45 @@
+services:
+  python-runner-image:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.runner
+    image: codeflow-python-runner:3.12
+    command: ["true"]
+    restart: "no"
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    depends_on:
+      - python-runner-image
+    ports:
+      - "8000:8000"
+    environment:
+      - CODEFLOW_ENV=${CODEFLOW_ENV:-development}
+      - CODEFLOW_EXECUTION_MODE=${CODEFLOW_EXECUTION_MODE:-auto}
+      - CODEFLOW_DOCKER_IMAGE=codeflow-python-runner:3.12
+      - CODEFLOW_CORS_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
+      - CODEFLOW_TUTOR_DB_PATH=/app/.data/tutor_conversations.db
+      - CODEFLOW_WORKSPACE_DB_PATH=/app/.data/codeflow_workspace.db
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+    volumes:
+      - codeflow_sqlite_data:/app/.data
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_BASE_URL: http://127.0.0.1:8000
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:8000
+
+volumes:
+  codeflow_sqlite_data:
+
