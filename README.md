@@ -343,6 +343,8 @@ MIT © 2026 CodeFlow AI
 
 ---
 
+<div align="center">
+  
 ## 👨‍💻 Author
 
 **K Tirumala Achari**  
@@ -365,17 +367,12 @@ Full Stack Developer | Aspiring Software Engineer
 > _"Passionate about building impactful, user-centric solutions through technology,_
 > _committed to continuous learning and innovation."_
 
-<div align="center">
 **⭐ If you found this project helpful or inspiring, please give it a star! ⭐**
 
 <br/>
 Made with ❤️ by **K Tirumala Achari**
 
 [![GitHub](https://img.shields.io/badge/GitHub-ktirumalaachari-blue?style=flat&logo=github)](https://github.com/ktirumalaachari)
-
-</div>
-
-<div align="center">
 
 **Built with ❤️ to make programming visual, intuitive, and actually fun to learn.**
 
