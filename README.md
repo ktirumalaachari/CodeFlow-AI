@@ -7,8 +7,6 @@
 **CodeFlow AI** is a full-stack interactive Python programming visualization and AI learning platform.  
 Write code, run it step-by-step, watch data structures come alive, and get real-time AI explanations — all in one place.
 
-<br/>
-
 [![Next.js](https://img.shields.io/badge/Next.js_15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
